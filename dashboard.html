@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascendia - A-Level Notes</title>
+
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f4f4f9;
+            color: #333;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Subject Buttons */
+        .subjects {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .subjects button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .subjects button:hover {
+            background: #0056b3;
+        }
+
+        /* Notes Section */
+        .notes {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .note-item {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .note-item:hover {
+            background: #ddd;
+        }
+
+        .note-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        .dark-mode .container {
+            background: #1e1e1e;
+        }
+
+        .dark-mode .note-item {
+            background: #333;
+        }
+
+        .dark-mode .note-item:hover {
+            background: #444;
+        }
+
+        .dark-mode .subjects button {
+            background: #444;
+        }
+
+        .dark-mode .subjects button:hover {
+            background: #666;
+        }
+
+        /* Dark Mode Toggle */
+        .toggle-btn {
+            background: none;
+            border: 2px solid #007BFF;
+            color: #007BFF;
+            padding: 8px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .toggle-btn:hover {
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ascendia</h1>
+        <p class="subtitle">A-Level Notes for Math, Computer Science & Economics</p>
+
+        <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+        <h2>Select a Subject:</h2>
+        <div class="subjects">
+            <button onclick="showNotes('math')">Math</button>
+            <button onclick="showNotes('cs')">Computer Science</button>
+            <button onclick="showNotes('econ')">Economics</button>
+        </div>
+
+        <div class="notes" id="notes-container"></div>
+    </div>
+
+    <script>
+        // Notes Data (Update with more resources)
+        const notes = {
+            math: [
+                { title: "Pure Math Formula Sheet", link: "notes/pure-math.pdf" },
+                { title: "Mechanics Summary", link: "notes/mechanics.pdf" }
+            ],
+            cs: [
+                { title: "Big-O Complexity Cheatsheet", link: "notes/big-o.pdf" },
+                { title: "Object-Oriented Programming", link: "notes/oop.pdf" }
+            ],
+            econ: [
+                { title: "Macroeconomics Revision Notes", link: "notes/macro.pdf" },
+                { title: "Market Structures Guide", link: "notes/market-structures.pdf" }
+            ]
+        };
+
+        // Function to Show Notes
+        function showNotes(subject) {
+            const container = document.getElementById("notes-container");
+            container.innerHTML = "<h2>Notes:</h2>";
+
+            if (!notes[subject] || notes[subject].length === 0) {
+                container.innerHTML += "<p>No notes available yet.</p>";
+                return;
+            }
+
+            notes[subject].forEach(note => {
+                container.innerHTML += `<div class="note-item">
+                    <a href="${note.link}" target="_blank">${note.title}</a>
+                </div>`;
+            });
+        }
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
+
+</body>
+</html>
 
