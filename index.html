@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ascendia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f6fa;
+      --text: #1f1f1f;
+      --glass: rgba(255, 255, 255, 0.6);
+      --blur: blur(12px);
+      --hover: rgba(255, 255, 255, 0.9);
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #f9fbff, #e8f0ff);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 4rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1.5rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+
+    .dashboard {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      background: var(--glass);
+      backdrop-filter: var(--blur);
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 30px var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.015);
+      background: var(--hover);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-emoji {
+      font-size: 2.2rem;
+      margin-right: 1.4rem;
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 500px) {
+      .card {
+        padding: 1.2rem 1.4rem;
+      }
+
+      .card-emoji {
+        font-size: 1.9rem;
+        margin-right: 1rem;
+      }
+
+      .card-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ascendia</h1>
+  </header>
+
+  <main class="dashboard">
+    <a href="math.html" class="card">
+      <div class="card-emoji">🧮</div>
+      <div class="card-title">Mathematics</div>
+    </a>
+    <a href="physics.html" class="card">
+      <div class="card-emoji">⚛️</div>
+      <div class="card-title">Physics</div>
+    </a>
+    <a href="cs.html" class="card">
+      <div class="card-emoji">💻</div>
+      <div class="card-title">Computer Science</div>
+    </a>
+    <a href="economics.html" class="card">
+      <div class="card-emoji">📊</div>
+      <div class="card-title">Economics</div>
+    </a>
+    <a href="sociology.html" class="card">
+      <div class="card-emoji">🧠</div>
+      <div class="card-title">Sociology</div>
+    </a>
+    <a href="business.html" class="card">
+      <div class="card-emoji">📈</div>
+      <div class="card-title">Business</div>
+    </a>
+    <a href="chemistry.html" class="card">
+      <div class="card-emoji">🧪</div>
+      <div class="card-title">Chemistry</div>
+    </a>
+    <a href="biology.html" class="card">
+      <div class="card-emoji">🧬</div>
+      <div class="card-title">Biology</div>
+    </a>
+  </main>
+
+  <footer>
+    © 2025 Ascendia. Built by Ayesha ✨
+  </footer>
+
+</body>
+</html>
