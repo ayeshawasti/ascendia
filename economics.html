@@ -1,1 +1,230 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Biology - Ascendia</title>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
+        <style>
+            :root {
+                --bg: #f5f6fa;
+                --text: #1f1f1f;
+                --glass: rgba(255, 255, 255, 0.6);
+                --blur: blur(12px);
+                --hover: rgba(255, 255, 255, 0.9);
+                --shadow: rgba(0, 0, 0, 0.1);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Outfit", sans-serif;
+                background: linear-gradient(135deg, #f9fbff, #e8f0ff);
+                color: var(--text);
+                min-height: 100vh;
+                padding-bottom: 4rem;
+            }
+
+            header {
+                text-align: center;
+                padding: 3rem 1rem 1.5rem;
+            }
+
+            header h1 {
+                font-size: 3rem;
+                font-weight: 600;
+                background: linear-gradient(90deg, #8e2de2, #4a00e0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                letter-spacing: 1px;
+            }
+
+            main {
+                max-width: 800px;
+                margin: 2rem auto;
+                padding: 0 1.5rem;
+            }
+
+            .content {
+                margin-bottom: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .cards-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .card {
+                width: 250px;
+                height: 150px;
+                background: var(--glass);
+                backdrop-filter: var(--blur);
+                border-radius: 10px;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: inherit;
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                box-shadow: 0 8px 30px var(--shadow);
+                transition: all 0.3s ease;
+                font-weight: 500;
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            .card:hover {
+                transform: translateY(-4px) scale(1.02);
+                background: var(--hover);
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            }
+
+            .card img {
+                width: 30px;
+                height: 30px;
+                margin-bottom: 1rem;
+            }
+
+            footer {
+                text-align: center;
+                padding: 2rem 1rem 0;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Economics - Ascendia</h1>
+        </header>
+
+        <main>
+            <div class="content">
+                <h2>Explore Economics Resources</h2>
+                <p>Click on the cards below to access the relevant PDF files for Economics study materials.</p>
+            </div>
+
+            <!-- Cards for PDF links -->
+            <div class="cards-container">
+                <div class="cards-container">
+                    <a
+                        href="https://drive.google.com/file/d/1vh9TXUG_xyE6L44i7yEIXbmBzihoNRFd/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Hodder Coursebook</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1PnkaIB7U-XV1uahnta3Owu-j13ahm5vd/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Cambridge Coursebook</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1wNbL58yysPdL2sSkjauB_JhYY1bE_wD2/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Cambridge Workbook</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1pRrtYgjGhRj0chFuxxGYKOcTJEAQ08o6/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>AS Microeconomics Ali Anwerzada</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/11LINmB77rK5NINMjP3ftlHBoQMYGE5yE/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>AS Macroeconomics Ali Anwerzada</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1WepABrgMObY8EAXq2dpgxcKMF4G4YZH2/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Complete Economics Guide</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1ia53wzCCeaqbIB2zqq5oga3706_mRD4d/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>iPad Notes Microeconomics</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1OGOx54WPGFG8EByZ2Cu3lSDJebxehu4n/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>iPad Notes Macroeconomics</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/drive/folders/1bpoP2OjEZFsx2LUXuB7mRJHUucP71VBQ?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Essays and Questions Complete Folder</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1S443QExUjBb5mGrVtIt0Qmww5zFVkwg9/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Scheme of Work</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1Dra2STQ2yhnq3_ehDBx2VOzquLoJQIM2/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Example Response P1</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1S_plmV_df3kPkPlztGh6Tt1xtXawN0xe/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Learner Guide</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/196lPR3VS3ie4DkbsFGxmNaOzrPdEihVR/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Example Response P2</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1YDWo6JaoAwjLPIutaK69on_RgXrVdKSY/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Macroeconomics Diagrams and Formulas</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1kZFSE5qmmpkMslNtCCRk8FZCImXuCMrQ/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Microeconomics Diagrams and Formulas</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1nYZXMG9httaHf9T2yBM5iKp2STwKMCvh/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Revision Guide by Ayesha</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer>© 2025 Ascendia. All rights reserved.</footer>
+    </body>
+</html>
 
