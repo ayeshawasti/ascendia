@@ -1,1 +1,183 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Biology - Ascendia</title>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet" />
+        <style>
+            :root {
+                --bg: #f5f6fa;
+                --text: #1f1f1f;
+                --glass: rgba(255, 255, 255, 0.6);
+                --blur: blur(12px);
+                --hover: rgba(255, 255, 255, 0.9);
+                --shadow: rgba(0, 0, 0, 0.1);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Outfit", sans-serif;
+                background: linear-gradient(135deg, #f9fbff, #e8f0ff);
+                color: var(--text);
+                min-height: 100vh;
+                padding-bottom: 4rem;
+            }
+
+            header {
+                text-align: center;
+                padding: 3rem 1rem 1.5rem;
+            }
+
+            header h1 {
+                font-size: 3rem;
+                font-weight: 600;
+                background: linear-gradient(90deg, #8e2de2, #4a00e0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                letter-spacing: 1px;
+            }
+
+            main {
+                max-width: 800px;
+                margin: 2rem auto;
+                padding: 0 1.5rem;
+            }
+
+            .content {
+                margin-bottom: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .cards-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .card {
+                width: 250px;
+                height: 150px;
+                background: var(--glass);
+                backdrop-filter: var(--blur);
+                border-radius: 10px;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: inherit;
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                box-shadow: 0 8px 30px var(--shadow);
+                transition: all 0.3s ease;
+                font-weight: 500;
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            .card:hover {
+                transform: translateY(-4px) scale(1.02);
+                background: var(--hover);
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            }
+
+            .card img {
+                width: 30px;
+                height: 30px;
+                margin-bottom: 1rem;
+            }
+
+            footer {
+                text-align: center;
+                padding: 2rem 1rem 0;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Chemistry - Ascendia</h1>
+        </header>
+
+        <main>
+            <div class="content">
+                <h2>Explore Chemistry Resources</h2>
+                <p>Click on the cards below to access the relevant PDF files for Chemistry study materials.</p>
+            </div>
+
+            <!-- Cards for PDF links -->
+            <div class="cards-container">
+                <div class="cards-container">
+                    <a
+                        href="https://drive.google.com/file/d/1vBWp1sJ1dM9lnioCbvrhQFiHwFNV5k9Z/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Hodder Latest Coursebook</span>
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/12DZfSTbe7hsZtTxR-gx8ZlODwq5s5tN5/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Learner Guide</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1KwSW5CdmGSKVTz891LPAYQvWP1IS4zr5/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Scheme of Work</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/drive/folders/17ew9jAifJIEaZiq5t1EZj1iBUBvtTb0S?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Summary Notes Folder</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1sZJfFNtiXJmuB-3c0dA5gi8uap6uA-5F/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Example Response Paper 2</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1qu2Ga4vUleuoFNBZL1CLxWnLos0NEnGK/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Example Response Paper 4</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/file/d/1nKF4wbce2N6Uz43kFJqKc64zD1n8mOpl/view?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Example Response Paper 5</span>
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/drive/folders/1WJu8OYC8tmZaKUDNX97v0Q54GWUND7Im?usp=drive_link"
+                        target="_blank"
+                        class="card">
+                        <span>Pretty Notes Folder</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer>© 2025 Ascendia. All rights reserved.</footer>
+    </body>
+</html>
 
