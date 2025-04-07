@@ -137,7 +137,7 @@
   </footer>
 
   <script>
-    // Switching between login and register forms
+    // Switch between login/register forms
     document.getElementById('show-register').addEventListener('click', function(event) {
       event.preventDefault();
       document.getElementById('login-form').style.display = 'none';
@@ -150,19 +150,19 @@
       document.getElementById('login-form').style.display = 'block';
     });
 
-    // Handle the login form submission
+    // Handle Login
     document.getElementById('login-form').addEventListener('submit', function(event) {
       event.preventDefault();
       const email = document.getElementById('login-email').value;
       const password = document.getElementById('login-password').value;
-      // Normally, here you would send a request to your server to check login credentials.
-      console.log('Login:', { email, password });
+
+      // Simulated login success
       alert('Logged in successfully!');
-      localStorage.setItem('username', email); // Simulating login
-      window.location.href = 'index.html'; // Redirect to home page after login
+      localStorage.setItem('ascendiaUser', email); // Store under correct key
+      window.location.href = 'index.html'; // Redirect to homepage
     });
 
-    // Handle the registration form submission
+    // Handle Registration
     document.getElementById('register-form').addEventListener('submit', function(event) {
       event.preventDefault();
       const username = document.getElementById('register-username').value;
@@ -175,11 +175,9 @@
         return;
       }
 
-      // Normally, here you would send a request to your server to create a new user.
-      console.log('Register:', { username, email, password });
       alert('Registered successfully!');
-      localStorage.setItem('username', username); // Store the username
-      window.location.href = 'index.html'; // Redirect to home page after registration
+      localStorage.setItem('ascendiaUser', username); // Store under correct key
+      window.location.href = 'index.html'; // Redirect to homepage
     });
   </script>
 
