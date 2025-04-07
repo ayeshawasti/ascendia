@@ -102,33 +102,6 @@
       font-size: 0.9rem;
       color: #aaa;
     }
-
-    .header-buttons {
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
-      margin-right: 20px;
-    }
-
-    .header-buttons button {
-      background: #4a00e0;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .header-buttons button:hover {
-      background: #8e2de2;
-    }
-
-    .header-buttons .username {
-      background: transparent;
-      border: none;
-      color: white;
-      cursor: default;
-    }
   </style>
 </head>
 <body>
@@ -136,11 +109,6 @@
   <header>
     <h1>Ascendia</h1>
   </header>
-
-  <!-- Login/Register button -->
-  <div class="header-buttons">
-    <button id="login-register-btn">Login/Register</button>
-  </div>
 
   <div class="form-container">
     <!-- Login Form -->
@@ -191,7 +159,6 @@
       console.log('Login:', { email, password });
       alert('Logged in successfully!');
       localStorage.setItem('username', email); // Simulating login
-      updateLoginButton(); // Update UI with username
       window.location.href = 'index.html'; // Redirect to home page after login
     });
 
@@ -212,25 +179,8 @@
       console.log('Register:', { username, email, password });
       alert('Registered successfully!');
       localStorage.setItem('username', username); // Store the username
-      updateLoginButton(); // Update UI with username
       window.location.href = 'index.html'; // Redirect to home page after registration
     });
-
-    // Update the login/register button to show the username after login/registration
-    function updateLoginButton() {
-      const username = localStorage.getItem('username');
-      if (username) {
-        document.getElementById('login-register-btn').textContent = username;
-      }
-    }
-
-    // Check if user is logged in (has username in localStorage)
-    window.onload = function() {
-      const username = localStorage.getItem('username');
-      if (username) {
-        document.getElementById('login-register-btn').textContent = username;
-      }
-    };
   </script>
 
 </body>
