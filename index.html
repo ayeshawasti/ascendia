@@ -32,6 +32,7 @@
     header {
       text-align: center;
       padding: 3rem 1rem 1.5rem;
+      position: relative;
     }
 
     header h1 {
@@ -41,6 +42,58 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: 1px;
+    }
+
+    /* 🔥 Top Right Buttons */
+    .top-right-buttons {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .top-right-buttons button {
+      padding: 0.5rem 0.6rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc); /* Bluish Purplish Gradient */
+      font-weight: 600;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Outfit', sans-serif;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      color: white;
+    }
+
+    .top-right-buttons button:hover {
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+      transform: scale(1.05);
+    }
+
+    /* 🔥 Flashcards Button Same as Subject Cards */
+    .flashcards-btn {
+      margin: 2rem auto 3rem auto;
+      padding: 1rem 1rem; /* Matching padding with subject cards */
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: white;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      width: 61%; /* Make it smaller and centered */
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .flashcards-btn:hover {
+      background: var(--hover);
+      transform: scale(1.05);
     }
 
     .dashboard {
@@ -110,6 +163,12 @@
       .card-title {
         font-size: 1.1rem;
       }
+
+      .top-right-buttons {
+        flex-direction: column;
+        top: 1rem;
+        right: 1rem;
+      }
     }
   </style>
 </head>
@@ -117,7 +176,15 @@
 
   <header>
     <h1>Ascendia</h1>
+
+    <!-- 🔥 Top Right Buttons -->
+    <div class="top-right-buttons">
+      <button onclick="location.href='login.html'">Login / Register</button>
+    </div>
   </header>
+
+  <!-- 🔥 Flashcards Button Same as Subject Cards (Centered) -->
+  <button class="flashcards-btn" onclick="goToFlashcards()">Go to Flashcard Maker</button>
 
   <main class="dashboard">
     <a href="math.html" class="card">
@@ -153,6 +220,22 @@
   <footer>
     © 2025 Ascendia. Built by Ayesha ✨
   </footer>
+
+  <!-- 🔥 Simple JS for login check -->
+  <script>
+    function isLoggedIn() {
+      return localStorage.getItem('ascendiaUser') !== null;
+    }
+
+    function goToFlashcards() {
+      if (isLoggedIn()) {
+        window.location.href = "flashcards.html";
+      } else {
+        alert("Please login or register to access flashcards.");
+        window.location.href = "login.html";
+      }
+    }
+  </script>
 
 </body>
 </html>
