@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - Ascendia</title>
+  <title>Register - Ascendia</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -43,7 +43,7 @@
       letter-spacing: 1px;
     }
 
-    .login-form {
+    .register-form {
       max-width: 400px;
       margin: 0 auto;
       padding: 2rem;
@@ -53,7 +53,7 @@
       box-shadow: 0 8px 30px var(--shadow);
     }
 
-    .login-form input {
+    .register-form input {
       width: 100%;
       padding: 1rem;
       margin-bottom: 1rem;
@@ -64,7 +64,7 @@
       background-color: #fff;
     }
 
-    .login-form button {
+    .register-form button {
       width: 100%;
       padding: 1rem;
       background: linear-gradient(135deg, #6a11cb, #2575fc);
@@ -76,7 +76,7 @@
       transition: all 0.3s ease;
     }
 
-    .login-form button:hover {
+    .register-form button:hover {
       background: linear-gradient(135deg, #2575fc, #6a11cb);
       transform: scale(1.05);
     }
@@ -95,12 +95,12 @@
     <h1>Ascendia</h1>
   </header>
 
-  <div class="login-form">
-    <h2>Login</h2>
-    <form id="login-form">
-      <input type="text" id="username" placeholder="Enter your username" required />
-      <input type="password" id="password" placeholder="Enter your password" required />
-      <button type="submit">Login</button>
+  <div class="register-form">
+    <h2>Register</h2>
+    <form id="register-form">
+      <input type="email" id="email" placeholder="Enter your email" required />
+      <input type="password" id="password" placeholder="Create a password" required />
+      <button type="submit">Register</button>
     </form>
   </div>
 
@@ -108,39 +108,23 @@
     © 2025 Ascendia. Built by Ayesha ✨
   </footer>
 
-  <!-- JS for login handling -->
+  <!-- JS for registration -->
   <script>
-    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
 
-    // Simple mock user database (for this example)
-    const users = [
-      { username: 'ash123', password: 'password123' }, // Example valid user
-      { username: 'john_doe', password: 'securepassword' } // Another valid user
-    ];
+    registerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    function validateLogin(username, password) {
-      const user = users.find(u => u.username === username);
-      if (user && user.password === password) {
-        return true;
-      }
-      return false;
-    }
-
-    loginForm.addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent form from reloading the page
-
-      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
 
-      if (validateLogin(username, password)) {
-        // Store the username in localStorage
-        localStorage.setItem('ascendiaUser', username);
+      // Simple mock registration logic (add the new user to localStorage)
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      users.push({ email, password });
+      localStorage.setItem('users', JSON.stringify(users));
 
-        // Redirect to the homepage after login
-        window.location.href = 'index.html';
-      } else {
-        alert('Invalid credentials, please try again!');
-      }
+      alert('Registration successful! Please log in.');
+      window.location.href = 'login.html';
     });
   </script>
 
