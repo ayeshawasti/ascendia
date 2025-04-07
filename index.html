@@ -75,7 +75,7 @@
     /* 🔥 Flashcards Button Same as Subject Cards */
     .flashcards-btn {
       margin: 2rem auto 3rem auto;
-      padding: 1rem 1rem; /* Matching padding with subject cards */
+      padding: 1rem 1rem;
       border: 1px solid rgba(0, 0, 0, 0.1);
       background: white;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -86,7 +86,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       display: block;
-      width: 61%; /* Make it smaller and centered */
+      width: 61%;
       max-width: 350px;
       text-align: center;
     }
@@ -179,7 +179,9 @@
 
     <!-- 🔥 Top Right Buttons -->
     <div class="top-right-buttons">
-      <button onclick="location.href='login.html'">Login / Register</button>
+      <span id="login-btn-container">
+        <button onclick="location.href='login.html'">Login / Register</button>
+      </span>
     </div>
   </header>
 
@@ -227,6 +229,18 @@
       return localStorage.getItem('ascendiaUser') !== null;
     }
 
+    function getUsername() {
+      return localStorage.getItem('ascendiaUser');
+    }
+
+    function updateLoginButton() {
+      const btnContainer = document.getElementById('login-btn-container');
+      if (isLoggedIn()) {
+        const username = getUsername();
+        btnContainer.innerHTML = `<button disabled style="cursor: default;">Welcome, ${username}</button>`;
+      }
+    }
+
     function goToFlashcards() {
       if (isLoggedIn()) {
         window.location.href = "flashcards.html";
@@ -235,6 +249,8 @@
         window.location.href = "login.html";
       }
     }
+
+    document.addEventListener('DOMContentLoaded', updateLoginButton);
   </script>
 
 </body>
