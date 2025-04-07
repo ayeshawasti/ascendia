@@ -111,11 +111,16 @@
   <!-- JS for login handling -->
   <script>
     const loginForm = document.getElementById('login-form');
-    
-    // Simulate a basic check for the sake of simplicity
+
+    // Simple mock user database (for this example)
+    const users = [
+      { username: 'ash123', password: 'password123' }, // Example valid user
+      { username: 'john_doe', password: 'securepassword' } // Another valid user
+    ];
+
     function validateLogin(username, password) {
-      // Here, we just validate that both fields are non-empty
-      if (username && password) {
+      const user = users.find(u => u.username === username);
+      if (user && user.password === password) {
         return true;
       }
       return false;
@@ -128,13 +133,13 @@
       const password = document.getElementById('password').value;
 
       if (validateLogin(username, password)) {
-        // Store username in localStorage
+        // Store the username in localStorage
         localStorage.setItem('ascendiaUser', username);
 
         // Redirect to the homepage after login
         window.location.href = 'index.html';
       } else {
-        alert('Please enter valid credentials!');
+        alert('Invalid credentials, please try again!');
       }
     });
   </script>
