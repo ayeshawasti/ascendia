@@ -230,7 +230,8 @@
     }
 
     function getUsername() {
-      return localStorage.getItem('ascendiaUser');
+      const user = JSON.parse(localStorage.getItem('ascendiaUser'));
+      return user ? user.username : null;
     }
 
     function updateLoginButton() {
