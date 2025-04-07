@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login/Register - Ascendia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Ascendia</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -26,12 +26,12 @@
       background: linear-gradient(135deg, #f9fbff, #e8f0ff);
       color: var(--text);
       min-height: 100vh;
-      padding-bottom: 4rem;
+      padding: 2rem;
     }
 
     header {
       text-align: center;
-      padding: 3rem 1rem 1.5rem;
+      margin-bottom: 3rem;
     }
 
     header h1 {
@@ -43,57 +43,42 @@
       letter-spacing: 1px;
     }
 
-    .form-container {
-      max-width: 600px;
-      margin: 3rem auto;
+    .login-form {
+      max-width: 400px;
+      margin: 0 auto;
       padding: 2rem;
       background: var(--glass);
       backdrop-filter: var(--blur);
-      border-radius: 15px;
+      border-radius: 12px;
       box-shadow: 0 8px 30px var(--shadow);
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      text-align: center;
     }
 
-    .form-container input {
-      padding: 0.8rem;
-      margin: 0.5rem 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
+    .login-form input {
       width: 100%;
-      outline: none;
-    }
-
-    .form-container input:focus {
-      border-color: #4a00e0;
-    }
-
-    .form-container button {
       padding: 1rem;
-      background: linear-gradient(90deg, #8e2de2, #4a00e0);
-      border: none;
-      color: white;
-      font-weight: 600;
+      margin-bottom: 1rem;
       border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .form-container button:hover {
-      background: linear-gradient(90deg, #4a00e0, #8e2de2);
-    }
-
-    .form-switch {
+      border: 1px solid rgba(0, 0, 0, 0.1);
       font-size: 1rem;
-      color: #555;
+      color: var(--text);
+      background-color: #fff;
     }
 
-    .form-switch a {
-      text-decoration: none;
-      color: #4a00e0;
+    .login-form button {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      border: none;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .login-form button:hover {
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+      transform: scale(1.05);
     }
 
     footer {
@@ -110,25 +95,12 @@
     <h1>Ascendia</h1>
   </header>
 
-  <div class="form-container">
-    <!-- Login Form -->
-    <form id="login-form" class="form" style="display: block;">
-      <h2>Login</h2>
-      <input type="email" id="login-email" placeholder="Email" required />
-      <input type="password" id="login-password" placeholder="Password" required />
+  <div class="login-form">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Enter your username" required />
+      <input type="password" id="password" placeholder="Enter your password" required />
       <button type="submit">Login</button>
-      <p class="form-switch">Don't have an account? <a href="#" id="show-register">Register</a></p>
-    </form>
-
-    <!-- Register Form -->
-    <form id="register-form" class="form" style="display: none;">
-      <h2>Register</h2>
-      <input type="text" id="register-username" placeholder="Username" required />
-      <input type="email" id="register-email" placeholder="Email" required />
-      <input type="password" id="register-password" placeholder="Password" required />
-      <input type="password" id="register-confirm-password" placeholder="Confirm Password" required />
-      <button type="submit">Register</button>
-      <p class="form-switch">Already have an account? <a href="#" id="show-login">Login</a></p>
     </form>
   </div>
 
@@ -136,49 +108,34 @@
     © 2025 Ascendia. Built by Ayesha ✨
   </footer>
 
+  <!-- JS for login handling -->
   <script>
-    // Switching between login and register forms
-    document.getElementById('show-register').addEventListener('click', function(event) {
-      event.preventDefault();
-      document.getElementById('login-form').style.display = 'none';
-      document.getElementById('register-form').style.display = 'block';
-    });
-
-    document.getElementById('show-login').addEventListener('click', function(event) {
-      event.preventDefault();
-      document.getElementById('register-form').style.display = 'none';
-      document.getElementById('login-form').style.display = 'block';
-    });
-
-    // Handle the login form submission
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
-      // Simulate checking credentials (you would check with a real backend here)
-      console.log('Login:', { email, password });
-      alert('Logged in successfully!');
-      localStorage.setItem('ascendiaUser', JSON.stringify({ username: email })); // Store user
-      window.location.href = 'index.html'; // Redirect to home page after login
-    });
-
-    // Handle the registration form submission
-    document.getElementById('register-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const username = document.getElementById('register-username').value;
-      const email = document.getElementById('register-email').value;
-      const password = document.getElementById('register-password').value;
-      const confirmPassword = document.getElementById('register-confirm-password').value;
-
-      if (password !== confirmPassword) {
-        alert('Passwords do not match!');
-        return;
+    const loginForm = document.getElementById('login-form');
+    
+    // Simulate a basic check for the sake of simplicity
+    function validateLogin(username, password) {
+      // Here, we just validate that both fields are non-empty
+      if (username && password) {
+        return true;
       }
+      return false;
+    }
 
-      console.log('Register:', { username, email, password });
-      alert('Registered successfully!');
-      localStorage.setItem('ascendiaUser', JSON.stringify({ username })); // Store username
-      window.location.href = 'index.html'; // Redirect to home page after registration
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from reloading the page
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (validateLogin(username, password)) {
+        // Store username in localStorage
+        localStorage.setItem('ascendiaUser', username);
+
+        // Redirect to the homepage after login
+        window.location.href = 'index.html';
+      } else {
+        alert('Please enter valid credentials!');
+      }
     });
   </script>
 
