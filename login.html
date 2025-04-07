@@ -137,7 +137,7 @@
   </footer>
 
   <script>
-    // Switch between login/register forms
+    // Switching between login and register forms
     document.getElementById('show-register').addEventListener('click', function(event) {
       event.preventDefault();
       document.getElementById('login-form').style.display = 'none';
@@ -150,19 +150,19 @@
       document.getElementById('login-form').style.display = 'block';
     });
 
-    // Handle Login
+    // Handle the login form submission
     document.getElementById('login-form').addEventListener('submit', function(event) {
       event.preventDefault();
       const email = document.getElementById('login-email').value;
       const password = document.getElementById('login-password').value;
-
-      // Simulated login success
+      // Simulate checking credentials (you would check with a real backend here)
+      console.log('Login:', { email, password });
       alert('Logged in successfully!');
-      localStorage.setItem('ascendiaUser', email); // Store under correct key
-      window.location.href = 'index.html'; // Redirect to homepage
+      localStorage.setItem('ascendiaUser', JSON.stringify({ username: email })); // Store user
+      window.location.href = 'index.html'; // Redirect to home page after login
     });
 
-    // Handle Registration
+    // Handle the registration form submission
     document.getElementById('register-form').addEventListener('submit', function(event) {
       event.preventDefault();
       const username = document.getElementById('register-username').value;
@@ -175,9 +175,10 @@
         return;
       }
 
+      console.log('Register:', { username, email, password });
       alert('Registered successfully!');
-      localStorage.setItem('ascendiaUser', username); // Store under correct key
-      window.location.href = 'index.html'; // Redirect to homepage
+      localStorage.setItem('ascendiaUser', JSON.stringify({ username })); // Store username
+      window.location.href = 'index.html'; // Redirect to home page after registration
     });
   </script>
 
